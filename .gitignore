@@ -30,3 +30,4 @@ gradle/
 
 # IDE related artifacts
 .idea
+bin
