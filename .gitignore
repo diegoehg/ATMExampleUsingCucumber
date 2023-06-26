@@ -23,6 +23,10 @@
 hs_err_pid*
 replay_pid*
 
+# Gradle related build artifacts
 .gradle/
 build/
 gradle/
+
+# IDE related artifacts
+.idea
