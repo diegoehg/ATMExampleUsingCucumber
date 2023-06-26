@@ -10,8 +10,6 @@ repositories {
     mavenCentral()
 }
 
-val cucumberClassPath = configurations.create("cucumberClassPath")
-
 val kotlinVersion = "1.8.22"
 val cucumberVersion = "7.12.1"
 val junitPlatformVersion = "1.9.3"
@@ -23,17 +21,10 @@ dependencies {
     testImplementation("io.cucumber:cucumber-junit-platform-engine:$cucumberVersion")
     testImplementation("org.junit.platform:junit-platform-suite:$junitPlatformVersion")
     testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
-    cucumberClassPath("io.cucumber:cucumber-java:$cucumberVersion")
 }
 
 tasks.named<Test>("test") {
     useJUnitPlatform()
-}
-
-tasks.register<JavaExec>("runCucumber") {
-    mainClass.set("io.cucumber.core.cli.Main")
-    classpath = cucumberClassPath
-    args("-p", "pretty")
 }
 
 kotlin {
