@@ -4,8 +4,6 @@ import io.cucumber.java.en.*
 import org.junit.jupiter.api.Assertions.assertEquals
 
 
-fun isItFriday(today:String) = if (today == "Friday") "TGIF" else "Nope"
-
 class StepDefinitions {
     private lateinit var today:String
     private lateinit var actualAnswer:String
