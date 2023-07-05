@@ -22,14 +22,9 @@ class StepDefinitions {
     fun theScenarioPasses() {
     }
 
-    @Given("today is Sunday")
-    fun today_is_sunday() {
-        today = "Sunday"
-    }
-
-    @Given("today is Friday")
-    fun today_is_friday() {
-        today = "Friday"
+    @Given("today is {string}")
+    fun today_is_sunday(today: String) {
+        this.today = today
     }
 
     @When("I ask whether it's Friday yet")
