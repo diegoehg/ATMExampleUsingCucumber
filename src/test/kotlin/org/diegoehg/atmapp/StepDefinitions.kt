@@ -3,7 +3,8 @@ package org.diegoehg.atmapp
 import io.cucumber.java.en.*
 import org.junit.jupiter.api.Assertions.assertEquals
 
-fun isItFriday(today:String) = "Nope"
+
+fun isItFriday(today:String) = if (today == "Friday") "TGIF" else "Nope"
 
 class StepDefinitions {
     private lateinit var today:String
@@ -24,6 +25,11 @@ class StepDefinitions {
     @Given("today is Sunday")
     fun today_is_sunday() {
         today = "Sunday"
+    }
+
+    @Given("today is Friday")
+    fun today_is_friday() {
+        today = "Friday"
     }
 
     @When("I ask whether it's Friday yet")
